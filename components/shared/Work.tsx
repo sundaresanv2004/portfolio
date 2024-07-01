@@ -9,7 +9,7 @@ const Work = () => {
             <div className={`flex ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
                 <div>
                     <h1 className="text-start text-6xl font-Space font-semibold text-black mb-2">Discover My Work</h1>
-                    <p className="text-slate-500 font-bold text-md">Here are some of my projects that I've worked
+                    <p className="text-slate-500 font-bold text-md">Here are some of my projects that I&#39;ve worked
                         on.</p>
                 </div>
                 <div className="grid lg:grid-cols-3 gap-10 md:grid-cols-2 w-full mt-10">

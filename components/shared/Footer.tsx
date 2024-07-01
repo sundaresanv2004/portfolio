@@ -32,7 +32,8 @@ const Footer = () => (
             <div className="flex flex-row md:mt-0 pt-5">
 
                 {socialMedia.map((social, index) => (
-                    <HoverCard>
+                    <HoverCard
+                    key={index}>
                         <HoverCardTrigger asChild>
                             <Image
                                 key={social.id}

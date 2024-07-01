@@ -8,7 +8,7 @@ const Skills = () => {
             <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
                 <div>
                     <h1 className="text-start text-6xl font-Space font-semibold text-black mb-2">What I Do</h1>
-                    <p className="text-slate-500 font-bold text-md">The tech's that I've been using to build my
+                    <p className="text-slate-500 font-bold text-md">The tech&apos;ss that I&apos;sve been using to build my
                         projects.</p>
                 </div>
                 <div className="grid lg:grid-cols-6 gap-8 md:grid-cols-3 grid-cols-2 w-full mt-10">
