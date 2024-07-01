@@ -20,7 +20,7 @@ import opencv_logo from "./opencv_logo.png";
 import react_logo from "./react_logo.png";
 import expo_logo from "./expo_logo.png";
 import html_logo from "./html_logo.png";
-import css3_logo from "./css3_logo.png";
+import css3_logo from "./CSS_logo.png";
 import tailwind_logo from "./tailwind_logo.png";
 import scikit_logo from "./scikit_logo.png";
 
