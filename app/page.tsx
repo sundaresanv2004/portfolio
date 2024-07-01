@@ -1,6 +1,5 @@
 import styles from "@/app/styles";
-import {Navbar, Hero, AboutMe, Work, Experience, Skills } from "@/components/shared";
-import Footer from "@/components/shared/Footer";
+import {Navbar, Hero, AboutMe, Work, Experience, Skills, Footer } from "@/components/shared";
 
 export default function Home() {
   return (
