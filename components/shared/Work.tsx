@@ -1,7 +1,6 @@
 import styles from "@/app/styles";
 import Image from "next/image";
-import {profile} from "@/public/assets";
-import { navLinks, works } from "@/constants";
+import { works } from "@/constants";
 
 const Work = () => {
     return (

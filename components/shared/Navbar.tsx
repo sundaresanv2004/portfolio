@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (
         <nav className="w-full flex py-6 justify-between items-center navbar">
-            <span className="text-white text-2xl font-mono font-semibold">Sundaresan V</span>
+            <span className="text-white text-2xl font-semibold">Sundaresan V</span>
 
             <div className="flex sm:hidden">
                 <Sheet>
@@ -36,7 +36,7 @@ const Navbar = () => {
                     <SheetContent side="top" className="bg-dark_blue h-auto">
                         <SheetHeader>
                             <SheetTitle className="text-start mb-5">
-                                <span className="text-2xl font-mono font-semibold">Sundaresan V</span>
+                                <span className="text-2xl font-semibold">Sundaresan V</span>
                             </SheetTitle>
                         </SheetHeader>
 
@@ -44,7 +44,7 @@ const Navbar = () => {
                             {navLinks.map((nav, index) => (
                                 <li
                                     key={nav.id}
-                                    className={`font-mono font-medium cursor-pointer text-[16px] hover:text-orange
+                                    className={`font-medium cursor-pointer text-[16px] hover:text-orange
                                         ${commonStyle} ${
                                         active === nav.title ? "text-white" : "text-dimWhite"
                                     } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
@@ -62,7 +62,7 @@ const Navbar = () => {
                 {navLinks.map((nav, index) => (
                     <li
                         key={nav.id}
-                        className={`font-mono font-normal cursor-pointer text-[16px] hover:text-orange
+                        className={`font-normal cursor-pointer text-[16px] hover:text-orange
                             ${commonStyle} ${
                             active === nav.title ? "text-white" : "text-dimWhite"
                         } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}

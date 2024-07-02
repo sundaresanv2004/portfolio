@@ -13,7 +13,7 @@ export default function Home() {
               </div>
           </header>
 
-          <div className={`bg-dark_blue mt-5 max-md:mt-20 ${styles.flexStart}`}>
+          <div id="home" className={`bg-dark_blue mt-5 max-md:mt-20 ${styles.flexStart}`}>
               <div className={`${styles.boxWidth}`}>
                 <Hero/>
               </div>

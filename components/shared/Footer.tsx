@@ -17,11 +17,11 @@ const Footer = () => (
   <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
         <div className="flex-[1] flex flex-col justify-start mr-10">
-            <h1 className="font-semibold text-white text-2xl font-mono">Sundaresan
+            <h1 className="font-semibold text-white text-2xl">Sundaresan
                 <span className="text-orange pl-2">V</span>
             </h1>
 
-            <p className={`${styles.paragraph} mt-4 max-w-[312px] flex font-mono items-center`}>
+            <p className={`${styles.paragraph} mt-4 max-w-[312px] flex items-center`}>
                 <Image
                     src={location}
                     alt=""
@@ -90,8 +90,8 @@ const Footer = () => (
     </div>
 
     <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
-      <p className="font-poppins font-normal text-center text-[16px] leading-[27px] text-white font-mono">
-          Copyright Ⓒ 2024 Sundaresan V. Powered by <span className="pl-1 font-vold pr-1"> Next JS</span> Styled by Tailwind CSS & Shadcn UI
+      <p className="font-poppins font-normal text-center text-[16px] leading-[27px] text-white">
+          Copyright Ⓒ 2024 Sundaresan V | Powered by <span className="pl-1 font-bold pr-1"> Next JS</span> Styled by Tailwind CSS & Shadcn UI
       </p>
     </div>
   </section>

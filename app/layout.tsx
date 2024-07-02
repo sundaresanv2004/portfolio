@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import React from "react";
 
-const fontSans = FontSans({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: ['400', '700']
 });
 
 export const metadata: Metadata = {
@@ -23,8 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          "min-h-screen bg-background antialiased",
+          spaceGrotesk.className,
         )}
       >
         <ThemeProvider
