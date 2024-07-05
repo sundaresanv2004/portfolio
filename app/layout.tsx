@@ -5,6 +5,7 @@ import "./globals.css";
 import React from "react";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
     >
       {children}
       <Toaster />
+      <SpeedInsights />
     </ThemeProvider>
     </body>
     </html>
