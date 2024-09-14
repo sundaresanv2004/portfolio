@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
+import { StaticImageData } from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import Image from "next/image"
 import { skills } from "@/constants"
@@ -8,11 +9,10 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 type Skill = {
-    id: string;
+    id: string | number;
     title: string;
-    img: string;
+    img: StaticImageData | string;
     category: string;
-    proficiency: number;
     description: string;
 }
 
