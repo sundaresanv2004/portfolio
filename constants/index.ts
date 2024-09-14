@@ -1,6 +1,6 @@
 import {
     img0, img1, img2, tensorflow_logo, python_logo, django_logo, PyTorch, js_logo,
-    ts_logo, mysql_logo, next_logo, firebase_logo, opencv_logo, html_logo, css3_logo,
+    mysql_logo, next_logo, firebase_logo, opencv_logo, html_logo, css3_logo,
     tailwind_logo, react_logo, expo_logo, scikit_logo, instagram, github, linkedin, mail,
 } from "@/public/assets";
 
@@ -28,22 +28,25 @@ export const works = [
         id: "feature-1",
         image: img0,
         title: "Medical Detection Hub",
-        content:
-            "This project offers a user-friendly web interface for detecting skin cancer and pneumonia through image uploads.",
+        content: "This project offers a user-friendly web interface for detecting skin cancer and pneumonia through image uploads.",
+        github: "",
+        live: ""
     },
     {
         id: "feature-2",
         image: img1,
         title: "E-Voting",
-        content:
-            "Is is an election application designed for desktop and laptop computers. Built on the flet library in the Python",
+        content: "Is is an election application designed for desktop and laptop computers. Built on the flet library in the Python",
+        github: "",
+        live: ""
     },
     {
         id: "feature-3",
         image: img2,
         title: "Automatic Number Plate Recognition",
-        content:
-            "This project is designed to automatically capture, interpret, and store vehicle license plate information. This project is designed to automatically capture, interpret, and store vehicle license plate information. This project is designed to automatically capture, interpret, and store vehicle license plate information.",
+        content: "This project is designed to automatically capture, interpret, and store vehicle license plate information. This project is designed to automatically capture, interpret, and store vehicle license plate information. This project is designed to automatically capture, interpret, and store vehicle license plate information.",
+        github: "",
+        live: ""
     },
 ];
 

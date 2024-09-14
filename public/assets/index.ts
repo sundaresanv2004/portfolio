@@ -1,5 +1,3 @@
-import menu from "./menu.svg";
-
 import profile from "./profile.svg";
 import img0 from "./img0.png";
 import img1 from "./img1.png";
@@ -30,8 +28,6 @@ import mail from "./mail.png";
 import location from "./location.png";
 
 export {
-    menu,
-
     profile,
     img0,
     img1,

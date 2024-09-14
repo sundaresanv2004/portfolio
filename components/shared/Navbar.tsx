@@ -1,27 +1,45 @@
-import styles from "@/app/styles";
-import Image from "next/image";
-import {menu} from "@/public/assets";
-import {
-    Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger,
-} from "@/components/ui/sheet"
-import {Button} from "@/components/ui/button";
-import {navLinks} from "@/constants";
+'use client'
 
+import { useState } from 'react'
+import styles from "@/app/styles"
+import { Menu } from 'lucide-react';
+import {
+    Sheet,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button"
+import { navLinks } from "@/constants"
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
-    let commonStyle = "transition ease-in-out delay-75";
+    const [activeLink, setActiveLink] = useState('')
+
+    const handleSetActiveLink = (id: string) => {
+        setActiveLink(id)
+    }
 
     return (
-        <nav className="w-full flex py-6 justify-between items-center">
-            <span className={`${styles.heading3} `}>Sundaresan V</span>
+        <motion.nav
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-full flex py-6 justify-between items-center"
+        >
+            <motion.span
+                whileHover={{ scale: 1.05 }}
+                className={`${styles.heading3} cursor-pointer`}
+            >
+                Sundaresan V
+            </motion.span>
 
             <div className="flex sm:hidden">
                 <Sheet>
                     <SheetTrigger asChild className="flex-1">
                         <Button variant='ghost'>
-                            <Image
-                                src={menu}
-                                alt=""
+                            <Menu
                                 className="w-[26px] h-[26px] object-contain"
                             />
                         </Button>
@@ -35,13 +53,16 @@ const Navbar = () => {
                         </SheetHeader>
                         <ul className="list-none flex justify-end items-start flex-1 flex-col mb-2">
                             {navLinks.map((nav, index) => (
-                                <li
+                                <motion.li
                                     key={nav.id}
-                                    className={`font-medium cursor-pointer text-md hover:text-orange
-                                        ${commonStyle} ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
+                                    whileHover={{ scale: 1.05, color: '#FFA500' }}
+                                    className={`font-medium cursor-pointer text-md
+                    ${activeLink === nav.id ? 'text-orange' : 'text-white'}
+                    ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
+                                    onClick={() => handleSetActiveLink(nav.id)}
                                 >
                                     <a href={`#${nav.id}`}>{nav.title}</a>
-                                </li>
+                                </motion.li>
                             ))}
                         </ul>
                     </SheetContent>
@@ -50,18 +71,20 @@ const Navbar = () => {
 
             <ul className="list-none sm:flex hidden justify-end items-center flex-1">
                 {navLinks.map((nav, index) => (
-                    <li
+                    <motion.li
                         key={nav.id}
-                        className={`font-normal cursor-pointer text-md hover:text-orange
-                        ${commonStyle} ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
+                        whileHover={{ scale: 1.05, color: '#FFA500' }}
+                        className={`font-normal cursor-pointer text-md
+              ${activeLink === nav.id ? 'text-orange' : 'text-white'}
+              ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
+                        onClick={() => handleSetActiveLink(nav.id)}
                     >
                         <a href={`#${nav.id}`}>{nav.title}</a>
-                    </li>
+                    </motion.li>
                 ))}
             </ul>
-
-        </nav>
-    );
+        </motion.nav>
+    )
 }
 
-export default Navbar;
+export default Navbar
