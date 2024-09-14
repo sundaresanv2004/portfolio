@@ -46,7 +46,7 @@ const Work = () => {
                 >
                     <div>
                         <h1 className="text-start text-6xl font-Space font-semibold text-black mb-2 max-sm:text-5xl">Discover My Work</h1>
-                        <p className="text-slate-500 font-bold text-md">Here are some of my projects that I&#39;ve worked on.</p>
+                        <p className="text-slate-500 font-bold text-lg">Here are some of my projects that I&#39;ve worked on.</p>
                     </div>
                 </motion.div>
 

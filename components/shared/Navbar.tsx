@@ -9,6 +9,7 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
+    SheetClose
 } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { navLinks } from "@/constants"
@@ -19,6 +20,10 @@ const Navbar = () => {
 
     const handleSetActiveLink = (id: string) => {
         setActiveLink(id)
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     return (
@@ -57,11 +62,13 @@ const Navbar = () => {
                                     key={nav.id}
                                     whileHover={{ scale: 1.05, color: '#FFA500' }}
                                     className={`font-medium cursor-pointer text-md
-                    ${activeLink === nav.id ? 'text-orange' : 'text-white'}
-                    ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
+                                    ${activeLink === nav.id ? 'text-orange' : 'text-white'}
+                                    ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                                     onClick={() => handleSetActiveLink(nav.id)}
                                 >
-                                    <a href={`#${nav.id}`}>{nav.title}</a>
+                                    <SheetClose asChild>
+                                        <a href={`#${nav.id}`}>{nav.title}</a>
+                                    </SheetClose>
                                 </motion.li>
                             ))}
                         </ul>
@@ -74,9 +81,9 @@ const Navbar = () => {
                     <motion.li
                         key={nav.id}
                         whileHover={{ scale: 1.05, color: '#FFA500' }}
-                        className={`font-normal cursor-pointer text-md
-              ${activeLink === nav.id ? 'text-orange' : 'text-white'}
-              ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
+                        className={`font-normal cursor-pointer text-md 
+                        ${activeLink === nav.id ? 'text-orange' : 'text-white'} 
+                        ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
                         onClick={() => handleSetActiveLink(nav.id)}
                     >
                         <a href={`#${nav.id}`}>{nav.title}</a>

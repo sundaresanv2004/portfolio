@@ -52,81 +52,113 @@ export const works = [
 
 export const skills = [
     {
-        id: "skill-1",
+        id: 1,
+        title: "React",
+        img: react_logo,
+        category: "frontend",
+        description: "Extensive experience building complex web applications with React and its ecosystem."
+    },
+    {
+        id: 2,
         title: "Python",
         img: python_logo,
+        category: "backend",
+        description: "Proficient in Python for various applications, including web development and data analysis."
     },
     {
-        id: "skill-2",
-        title: "Tensorflow",
+        id: 3,
+        title: "TensorFlow",
         img: tensorflow_logo,
+        category: "machine learning",
+        description: "Experienced in using TensorFlow for building and training machine learning models."
     },
     {
-        id: "skill-3",
+        id: 4,
         title: "PyTorch",
         img: PyTorch,
+        category: "machine learning",
+        description: "Skilled in using PyTorch for developing deep learning models and research."
     },
     {
-        id: "skill-4",
-        title: "Open CV",
-        img: opencv_logo,
-    },
-    {
-        id: "skill-5",
+        id: 5,
         title: "Scikit-Learn",
         img: scikit_logo,
+        category: "machine learning",
+        description: "Skilled in using PyTorch for developing deep learning models and research."
     },
     {
-        id: "skill-6",
+        id: 6,
+        title: "OpenCV",
+        img: opencv_logo,
+        category: "machine learning",
+        description: "Experience in computer vision tasks and image processing using OpenCV."
+    },
+    {
+        id: 7,
         title: "Django",
         img: django_logo,
+        category: "backend",
+        description: "Proficient in using Django for rapid web application development."
     },
     {
-        id: "skill-7",
-        title: "HTML 5",
+        id: 8,
+        title: "HTML5",
         img: html_logo,
+        category: "frontend",
+        description: "Strong understanding of HTML5 for structuring web content."
     },
     {
-        id: "skill-8",
-        title: "CSS 3",
+        id: 9,
+        title: "CSS3",
         img: css3_logo,
+        category: "frontend",
+        description: "Expertise in CSS3 for styling and layout design of web applications."
     },
     {
-        id: "skill-9",
-        title: "Javascript",
+        id: 10,
+        title: "Java script",
         img: js_logo,
+        category: "frontend",
+        description: "Advanced skills in JavaScript for creating dynamic and interactive web experiences."
     },
     {
-        id: "skill-10",
+        id: 11,
         title: "Tailwind CSS",
         img: tailwind_logo,
+        category: "frontend",
+        description: "Experience with Tailwind CSS for utility-first styling and responsive design."
     },
     {
-        id: "skill-11",
+        id: 12,
         title: "MySQL",
         img: mysql_logo,
+        category: "database",
+        description: "Proficient in MySQL for relational database management and querying."
     },
     {
-        id: "skill-12",
+        id: 13,
         title: "Firebase",
         img: firebase_logo,
+        category: "database",
+        description: "Experience with Firebase for real-time databases and authentication."
     },
     {
-        id: "skill-13",
-        title: "Next JS",
+        id: 14,
+        title: "Next.js",
         img: next_logo,
+        category: "frontend",
+        description: "Skilled in using Next.js for server-side rendering and static site generation."
     },
     {
-        id: "skill-14",
-        title: "React JS",
-        img: react_logo,
-    },
-    {
-        id: "skill-15",
+        id: 15,
         title: "Expo Go",
         img: expo_logo,
+        category: "mobile",
+        description: "Experience with Expo Go for building and deploying React Native apps."
     },
 ];
+
+
 
 export const footerLinks = [
     {
@@ -159,6 +191,7 @@ export const socialMedia = [
         id_name: "@sundar16._",
         profile: "https://media.licdn.com/dms/image/D5603AQEQt0ghhJf19w/profile-displayphoto-shrink_400_400/0/1692105312961?e=1725494400&v=beta&t=rrLkOqaPmW1g31lAupIcQDEIz_5hLaX29d9HVGevwQA",
         link: "https://www.instagram.com/sundar16._",
+        des: "Instagram"
     },
     {
         id: "social-media-2",
@@ -166,6 +199,7 @@ export const socialMedia = [
         id_name: "@sundaresanv2004",
         profile: "https://avatars.githubusercontent.com/u/117519940?s=96&v=4",
         link: "https://github.com/sundaresanv2004",
+        des: "GitHub"
     },
     {
         id: "social-media-3",
@@ -173,6 +207,7 @@ export const socialMedia = [
         id_name: "@sundaresanv2004",
         profile: "https://media.licdn.com/dms/image/D5603AQEQt0ghhJf19w/profile-displayphoto-shrink_400_400/0/1692105312961?e=1725494400&v=beta&t=rrLkOqaPmW1g31lAupIcQDEIz_5hLaX29d9HVGevwQA",
         link: "https://www.linkedin.com/in/sundaresanv2004",
+        des: "LinkedIn"
     },
     {
         id: "social-media-4",
@@ -180,5 +215,6 @@ export const socialMedia = [
         id_name: "sundaresanv2004@gmail.com",
         profile: "https://avatars.githubusercontent.com/u/117519940?s=96&v=4",
         link: "mailto:sundaresanv2004@gmail.com",
+        des: "Mail"
     },
 ];
