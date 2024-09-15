@@ -112,17 +112,17 @@ export default function ProjectWorks() {
                                         </a>
                                     )}
                                 </div>
-                                <Button
-                                    variant="ghost"
-                                    size="sm"
-                                    className="text-[#FF8C63] hover:text-[#FF8C63] hover:bg-orange-50"
-                                    onClick={() => {
-                                        console.log(`Get link for project: ${work.id}`)
-                                    }}
-                                >
-                                    Get Link
-                                    <LinkIcon className="ml-2 h-4 w-4" />
-                                </Button>
+                                {/*<Button*/}
+                                {/*    variant="ghost"*/}
+                                {/*    size="sm"*/}
+                                {/*    className="text-[#FF8C63] hover:text-[#FF8C63] hover:bg-orange-50"*/}
+                                {/*    onClick={() => {*/}
+                                {/*        console.log(`Get link for project: ${work.id}`)*/}
+                                {/*    }}*/}
+                                {/*>*/}
+                                {/*    Get Link*/}
+                                {/*    <LinkIcon className="ml-2 h-4 w-4" />*/}
+                                {/*</Button>*/}
                             </div>
                         </div>
                     </motion.div>
