@@ -31,18 +31,18 @@ export default function RootLayout({
             spaceGrotesk.className,
         )}
     >
-    <PageWrapper>
-      <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-      >
+    <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+    >
+      <PageWrapper>
         {children}
-        <Toaster />
-        <SpeedInsights />
-      </ThemeProvider>
-    </PageWrapper>
+      </PageWrapper>
+      <Toaster />
+      <SpeedInsights />
+    </ThemeProvider>
     </body>
     </html>
   );
