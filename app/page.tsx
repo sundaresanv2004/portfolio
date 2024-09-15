@@ -36,8 +36,8 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className={`bg-white ${styles.flexStart} ${styles.paddingX}`}>
-                <div className={`${styles.boxWidth}`}>
+            <div id="skill" className={`bg-white ${styles.flexStart} ${styles.paddingX}`}>
+                <div className={`${styles.boxWidth} max-sm:mt-14 mt-9`}>
                     <Skills />
                 </div>
             </div>

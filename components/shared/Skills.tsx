@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { StaticImageData } from 'next/image'
 import { motion, useInView } from 'framer-motion'
 import Image from "next/image"
@@ -20,6 +20,7 @@ export default function Skills() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, amount: 0.2 })
     const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null)
+    const [showGradient, setShowGradient] = useState(true)
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -53,6 +54,28 @@ export default function Skills() {
         { id: 'tools', label: 'Tools & Others' },
     ]
 
+    useEffect(() => {
+        const tabsContainer = document.querySelector('.tabs-container')
+        if (tabsContainer) {
+            const handleScroll = () => {
+                const isScrollable = tabsContainer.scrollWidth > tabsContainer.clientWidth
+                const isScrolledToEnd = tabsContainer.scrollLeft + tabsContainer.clientWidth >= tabsContainer.scrollWidth - 10
+                setShowGradient(isScrollable && !isScrolledToEnd)
+            }
+
+            tabsContainer.addEventListener('scroll', handleScroll)
+            window.addEventListener('resize', handleScroll)
+
+            // Initial check
+            handleScroll()
+
+            return () => {
+                tabsContainer.removeEventListener('scroll', handleScroll)
+                window.removeEventListener('resize', handleScroll)
+            }
+        }
+    }, [])
+
     return (
         <section ref={ref} className="py-16">
             <div className="">
@@ -69,17 +92,24 @@ export default function Skills() {
                 </motion.div>
 
                 <Tabs defaultValue="all" className="mb-12">
-                    <TabsList className="flex justify-start mb-8 bg-transparent">
-                        {skillCategories.map((category) => (
-                            <TabsTrigger
-                                key={category.id}
-                                value={category.id}
-                                className="px-4 py-2 text-gray-600 bg-white hover:bg-gray-100 data-[state=active]:bg-gray-100 data-[state=active]:text-gray-900 rounded-md mr-2"
-                            >
-                                {category.label}
-                            </TabsTrigger>
-                        ))}
-                    </TabsList>
+                    <div className="relative">
+                        <div className="overflow-x-auto pb-4 mb-4 custom-scrollbar tabs-container">
+                            <TabsList className="flex justify-start bg-transparent whitespace-nowrap">
+                                {skillCategories.map((category) => (
+                                    <TabsTrigger
+                                        key={category.id}
+                                        value={category.id}
+                                        className="px-4 py-2 text-gray-600 bg-white hover:bg-gray-100 data-[state=active]:bg-gray-100 data-[state=active]:text-gray-900 rounded-md mr-2 flex-shrink-0"
+                                    >
+                                        {category.label}
+                                    </TabsTrigger>
+                                ))}
+                            </TabsList>
+                        </div>
+                        {showGradient && (
+                            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none animate-pulse" />
+                        )}
+                    </div>
                     {skillCategories.map((category) => (
                         <TabsContent key={category.id} value={category.id}>
                             <motion.div
@@ -110,7 +140,6 @@ export default function Skills() {
                                                 <h3 className="text-lg font-semibold text-gray-800 text-center">
                                                     {skill.title}
                                                 </h3>
-
                                             </div>
                                         </motion.div>
                                     ))}
@@ -144,6 +173,42 @@ export default function Skills() {
                     </p>
                 </motion.div>
             </div>
+
+            <style jsx global>{`
+                .custom-scrollbar {
+                    scrollbar-width: thin;
+                    scrollbar-color: #CBD5E0 #F1F5F9;
+                }
+
+                .custom-scrollbar::-webkit-scrollbar {
+                    width: 6px;
+                    height: 6px;
+                }
+
+                .custom-scrollbar::-webkit-scrollbar-track {
+                    background: #F1F5F9;
+                    border-radius: 3px;
+                }
+
+                .custom-scrollbar::-webkit-scrollbar-thumb {
+                    background-color: #CBD5E0;
+                    border-radius: 3px;
+                    border: 2px solid #F1F5F9;
+                }
+
+                .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                    background-color: #A0AEC0;
+                }
+
+                @keyframes pulse {
+                    0%, 100% { opacity: 0.6; }
+                    50% { opacity: 1; }
+                }
+
+                .animate-pulse {
+                    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+                }
+            `}</style>
         </section>
     )
 }

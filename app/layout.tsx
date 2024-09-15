@@ -6,6 +6,7 @@ import React from "react";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import PageWrapper from '@/components/shared/pageWrapper';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -30,16 +31,18 @@ export default function RootLayout({
             spaceGrotesk.className,
         )}
     >
-    <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
-        enableSystem
-        disableTransitionOnChange
-    >
-      {children}
-      <Toaster />
-      <SpeedInsights />
-    </ThemeProvider>
+    <PageWrapper>
+      <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+      >
+        {children}
+        <Toaster />
+        <SpeedInsights />
+      </ThemeProvider>
+    </PageWrapper>
     </body>
     </html>
   );

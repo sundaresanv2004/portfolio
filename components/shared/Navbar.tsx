@@ -67,7 +67,7 @@ const Navbar = () => {
                                     onClick={() => handleSetActiveLink(nav.id)}
                                 >
                                     <SheetClose asChild>
-                                        <a href={`#${nav.id}`}>{nav.title}</a>
+                                        <a href={`${nav.id}`}>{nav.title}</a>
                                     </SheetClose>
                                 </motion.li>
                             ))}
@@ -86,7 +86,7 @@ const Navbar = () => {
                         ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
                         onClick={() => handleSetActiveLink(nav.id)}
                     >
-                        <a href={`#${nav.id}`}>{nav.title}</a>
+                        <a href={`${nav.id}`}>{nav.title}</a>
                     </motion.li>
                 ))}
             </ul>

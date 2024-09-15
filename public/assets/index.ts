@@ -2,6 +2,7 @@ import profile from "./profile.svg";
 import img0 from "./img0.png";
 import img1 from "./img1.png";
 import img2 from "./img2.png";
+import rumi from "./rumi.png";
 
 import python_logo from "./python_logo.png";
 import tensorflow_logo from "./tensorflow_logo.png";
@@ -19,6 +20,7 @@ import html_logo from "./html_logo.png";
 import css3_logo from "./CSS_logo.png";
 import tailwind_logo from "./tailwind_logo.png";
 import scikit_logo from "./scikit_logo.png";
+import mongobd_logo from "./mongodb_logo.png";
 
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
@@ -32,6 +34,7 @@ export {
     img0,
     img1,
     img2,
+    rumi,
 
     tensorflow_logo,
     python_logo,
@@ -49,6 +52,7 @@ export {
     react_logo,
     expo_logo,
     scikit_logo,
+    mongobd_logo,
 
     instagram,
     linkedin,
