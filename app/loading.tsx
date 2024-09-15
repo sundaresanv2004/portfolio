@@ -75,7 +75,7 @@ export default function Loading() {
     }, [])
 
     return (
-        <div className="min-h-screen bg-background flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="min-h-screen bg-background flex flex-col items-center justify-center relative overflow-hidden z-20">
             <DataStream />
             <div className="absolute inset-0 flex items-center justify-center opacity-30">
                 <div className="h-[40vh] w-[40vh] bg-gradient-to-r from-primary to-secondary rounded-full filter blur-3xl animate-pulse" />
