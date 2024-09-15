@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Loader2 } from 'lucide-react'
 import { Progress } from "@/components/ui/progress"
 
@@ -14,7 +14,7 @@ const LoadingText = ({ text }: { text: string }) => {
             const timeout = setTimeout(() => {
                 setCurrentText(prevText => prevText + text[currentIndex])
                 setCurrentIndex(prevIndex => prevIndex + 1)
-            }, 60)
+            }, 80)
 
             return () => clearTimeout(timeout)
         }
@@ -23,37 +23,28 @@ const LoadingText = ({ text }: { text: string }) => {
     return (
         <div className="font-mono text-2xl text-primary-foreground">
             {currentText}
-            <span className="animate-pulse">_</span>
+            <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ repeat: Infinity, duration: 0.7, ease: "easeInOut" }}
+            >
+                _
+            </motion.span>
         </div>
     )
 }
 
-const DataStream = () => {
-    const [streams, setStreams] = useState<string[]>([])
-
-    useEffect(() => {
-        const newStreams = Array.from({ length: 10 }, () =>
-            Array.from({ length: 50 }, () => Math.round(Math.random())).join('')
-        )
-        setStreams(newStreams)
-    }, [])
-
+const BackgroundAnimation = () => {
     return (
-        <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
-            {streams.map((stream, i) => (
-                <div
-                    key={i}
-                    className="absolute text-primary/50 text-sm whitespace-nowrap"
-                    style={{
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
-                        animation: `fall ${5 + Math.random() * 10}s linear infinite`,
-                    }}
-                >
-                    {stream}
-                </div>
-            ))}
-        </div>
+        <motion.div
+            className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.2 }}
+            transition={{ duration: 2 }}
+        >
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 animate-gradient-xy" />
+        </motion.div>
     )
 }
 
@@ -74,30 +65,83 @@ export default function Loading() {
         return () => clearInterval(timer)
     }, [])
 
+    const progressItems = [
+        { label: "Loading Projects", value: Math.floor(progress / 2) },
+        { label: "Preparing Skills Showcase", value: Math.floor(progress / 3) },
+        { label: "Optimizing Experience Section", value: Math.floor(progress / 4) },
+    ]
+
     return (
         <div className="min-h-screen bg-background flex flex-col items-center justify-center relative overflow-hidden z-20">
-            <DataStream />
-            <div className="absolute inset-0 flex items-center justify-center opacity-30">
-                <div className="h-[40vh] w-[40vh] bg-gradient-to-r from-primary to-secondary rounded-full filter blur-3xl animate-pulse" />
-            </div>
+            <BackgroundAnimation />
+            <motion.div
+                className="absolute inset-0 flex items-center justify-center"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.3 }}
+                transition={{ duration: 1.5 }}
+            >
+                <motion.div
+                    className="h-[40vh] w-[40vh] bg-gradient-to-r from-primary to-secondary rounded-full filter blur-3xl"
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 180, 360],
+                    }}
+                    transition={{
+                        duration: 10,
+                        ease: "linear",
+                        repeat: Infinity,
+                    }}
+                />
+            </motion.div>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 className="text-center z-10 px-4 space-y-8"
             >
-                <Loader2 className="w-16 h-16 text-primary animate-spin mx-auto" />
-                <LoadingText text="Initializing Reality Simulation..." />
+                <motion.div
+                    animate={{
+                        rotate: [0, 360],
+                    }}
+                    transition={{
+                        duration: 2,
+                        ease: "linear",
+                        repeat: Infinity,
+                    }}
+                >
+                    <Loader2 className="w-16 h-16 text-primary mx-auto" />
+                </motion.div>
+                <LoadingText text="Loading Portfolio..." />
                 <div className="w-64 mx-auto">
                     <Progress value={progress} className="h-2" />
                 </div>
-                <div className="text-sm text-muted-foreground">
-                    Loading: {progress}%
-                </div>
+                <motion.div
+                    className="text-sm text-muted-foreground"
+                    animate={{
+                        scale: [1, 1.05, 1],
+                    }}
+                    transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                >
+                    Progress: {progress}%
+                </motion.div>
                 <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>Quantum Fluctuations Stabilized: {Math.floor(progress / 2)}%</p>
-                    <p>Parallel Universes Aligned: {Math.floor(progress / 3)}%</p>
-                    <p>Temporal Paradoxes Resolved: {Math.floor(progress / 4)}%</p>
+                    <AnimatePresence>
+                        {progressItems.map((item, index) => (
+                            <motion.p
+                                key={item.label}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: 20 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                            >
+                                {item.label}: {item.value}%
+                            </motion.p>
+                        ))}
+                    </AnimatePresence>
                 </div>
             </motion.div>
         </div>

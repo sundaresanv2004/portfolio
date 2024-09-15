@@ -15,7 +15,7 @@ export default function ProjectsPage() {
                 </div>
             </header>
 
-            <div className={`${styles.paddingY}`}>
+            <div className={`${styles.paddingY} max-sm:mt-10`}>
                 <ProjectWorks />
             </div>
 

@@ -42,37 +42,37 @@ export default function ProjectWorks() {
     }
 
     return (
-        <section ref={ref} className="py-16 px-6 sm:px-16 xl:px-0 max-w-7xl mx-auto">
+        <section ref={ref} className="py-8 sm:py-16 px-4 sm:px-6 lg:px-8 xl:px-0 max-w-7xl mx-auto">
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="flex justify-between items-center mb-10"
+                className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 sm:mb-10 space-y-4 sm:space-y-0"
             >
                 <div>
-                    <h1 className="text-start text-5xl md:text-6xl font-bold text-gray-900 mb-2">All Projects</h1>
-                    <p className="text-gray-600 text-lg">Explore all of my projects</p>
+                    <h1 className="text-start text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2">All Projects</h1>
+                    <p className="text-gray-600 text-base sm:text-lg">Explore all of my projects</p>
                 </div>
-                <Link href="/">
-                    <Button variant="outline" className="flex items-center bg-[#FF8C63] text-white border-white hover:bg-[#FF8C63]/90 transition-colors duration-300">
+                <Link href="/" className="w-full sm:w-auto">
+                    <Button variant="outline" className="w-full sm:w-auto flex items-center justify-center bg-[#FF8C63] text-white border-white hover:bg-[#FF8C63]/90 transition-colors duration-300">
                         <ArrowLeft className="mr-2 h-4 w-4" />
                         Back to Home
                     </Button>
                 </Link>
             </motion.div>
 
-            <div className="mb-8">
+            <div className="mb-6 sm:mb-8">
                 <Input
                     type="text"
                     placeholder="Search projects..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full max-w-md py-6 text-black"
+                    className="w-full max-w-full sm:max-w-md py-4 sm:py-6 text-black"
                 />
             </div>
 
             <motion.div
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
                 variants={containerVariants}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
@@ -83,7 +83,7 @@ export default function ProjectWorks() {
                         variants={itemVariants}
                         className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
                     >
-                        <div className="relative h-48 overflow-hidden">
+                        <div className="relative h-40 sm:h-48 overflow-hidden">
                             <Image
                                 src={work.image}
                                 alt={work.title}
@@ -92,11 +92,11 @@ export default function ProjectWorks() {
                                 className="transition-transform duration-300 hover:scale-110"
                             />
                         </div>
-                        <div className="p-6">
+                        <div className="p-4 sm:p-6">
                             <div className="flex justify-between items-center mb-2">
-                                <h3 className="text-xl font-semibold text-gray-900">{work.title}</h3>
+                                <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{work.title}</h3>
                             </div>
-                            <p className="text-gray-600 line-clamp-3 mb-4">
+                            <p className="text-sm sm:text-base text-gray-600 line-clamp-3 mb-4">
                                 {work.content}
                             </p>
                             <div className="flex justify-between items-center">
@@ -112,17 +112,6 @@ export default function ProjectWorks() {
                                         </a>
                                     )}
                                 </div>
-                                {/*<Button*/}
-                                {/*    variant="ghost"*/}
-                                {/*    size="sm"*/}
-                                {/*    className="text-[#FF8C63] hover:text-[#FF8C63] hover:bg-orange-50"*/}
-                                {/*    onClick={() => {*/}
-                                {/*        console.log(`Get link for project: ${work.id}`)*/}
-                                {/*    }}*/}
-                                {/*>*/}
-                                {/*    Get Link*/}
-                                {/*    <LinkIcon className="ml-2 h-4 w-4" />*/}
-                                {/*</Button>*/}
                             </div>
                         </div>
                     </motion.div>

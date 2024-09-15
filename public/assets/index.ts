@@ -20,7 +20,8 @@ import html_logo from "./html_logo.png";
 import css3_logo from "./CSS_logo.png";
 import tailwind_logo from "./tailwind_logo.png";
 import scikit_logo from "./scikit_logo.png";
-import mongobd_logo from "./mongodb_logo.png";
+import mongodb_logo from "./mongodb_logo.png";
+import blender_logo from "./blender_logo.png";
 
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
@@ -52,7 +53,8 @@ export {
     react_logo,
     expo_logo,
     scikit_logo,
-    mongobd_logo,
+    mongodb_logo,
+    blender_logo,
 
     instagram,
     linkedin,

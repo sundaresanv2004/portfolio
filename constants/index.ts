@@ -1,6 +1,6 @@
 import {
     img0, img1, img2, tensorflow_logo, python_logo, django_logo, PyTorch, js_logo, rumi,
-    mysql_logo, next_logo, firebase_logo, opencv_logo, html_logo, css3_logo, mongobd_logo,
+    mysql_logo, next_logo, firebase_logo, opencv_logo, html_logo, css3_logo, mongodb_logo, blender_logo,
     tailwind_logo, react_logo, expo_logo, scikit_logo, instagram, github, linkedin, mail, ts_logo,
 } from "@/public/assets";
 
@@ -178,9 +178,16 @@ export const skills = [
     {
         id: 17,
         title: "Mongo DB",
-        img: mongobd_logo,
+        img: mongodb_logo,
         category: "database",
         description: "Experience with MongoDB for creating scalable, NoSQL databases. Utilized it for managing large datasets and integrating it with Node.js applications."
+    },
+    {
+        id: 18,
+        title: "Blender",
+        img: blender_logo,
+        category: "tools",
+        description: "Proficient in using Blender for 3D modeling, animation, and rendering. Experienced in creating detailed 3D assets and visual effects for various applications and projects."
     },
 ];
 
