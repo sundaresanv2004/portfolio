@@ -14,7 +14,7 @@ const LoadingText = ({ text }: { text: string }) => {
             const timeout = setTimeout(() => {
                 setCurrentText(prevText => prevText + text[currentIndex])
                 setCurrentIndex(prevIndex => prevIndex + 1)
-            }, 100)
+            }, 60)
 
             return () => clearTimeout(timeout)
         }
@@ -67,9 +67,9 @@ export default function Loading() {
                     clearInterval(timer)
                     return 100
                 }
-                return prevProgress + 1
+                return prevProgress + 2
             })
-        }, 50)
+        }, 40)
 
         return () => clearInterval(timer)
     }, [])

@@ -12,7 +12,7 @@ export default function PageWrapper({ children }: { children: React.ReactNode })
       const timer = setTimeout(() => {
         setIsLoading(false)
         localStorage.setItem('hasVisited', 'true')
-      }, 4000)
+      }, 2500)
       return () => clearTimeout(timer)
     } else {
       setIsLoading(false)
