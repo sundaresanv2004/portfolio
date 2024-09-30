@@ -1,11 +1,10 @@
 'use client'
-
 import { useRef } from 'react'
 import Image from "next/image"
 import Link from "next/link"
 import { works } from "@/constants"
 import { motion, useInView } from 'framer-motion'
-import { ArrowRight, Code, Link as LinkIcon } from 'lucide-react'
+import { ArrowRight, Code } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 
 const Work = () => {

@@ -1,8 +1,7 @@
 'use client'
-
 import styles from "@/app/styles"
 import Image from "next/image"
-import { profile } from "@/public/assets"
+import { profile } from "@/public/assets/images"
 import { motion } from 'framer-motion'
 import { ArrowRight, Download } from 'lucide-react'
 import { Button } from "@/components/ui/button"

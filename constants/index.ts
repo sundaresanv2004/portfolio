@@ -1,8 +1,9 @@
 import {
     img0, img1, img2, tensorflow_logo, python_logo, django_logo, PyTorch, js_logo, rumi,
     mysql_logo, next_logo, firebase_logo, opencv_logo, html_logo, css3_logo, mongodb_logo, blender_logo,
-    tailwind_logo, react_logo, expo_logo, scikit_logo, instagram, github, linkedin, mail, ts_logo,
-} from "@/public/assets";
+    tailwind_logo, react_logo, expo_logo, scikit_logo, instagram, github, linkedin, mail, ts_logo, figma_logo,
+    docker_logo, vscode_logo, git_logo, github_logo,
+} from "@/public/assets/images";
 
 export const navLinks = [
     {
@@ -188,6 +189,41 @@ export const skills = [
         img: blender_logo,
         category: "tools",
         description: "Proficient in using Blender for 3D modeling, animation, and rendering. Experienced in creating detailed 3D assets and visual effects for various applications and projects."
+    },
+    {
+        id: 19,
+        title: "Figma",
+        img: figma_logo,
+        category: "tools",
+        description: "Skilled in using Figma for UI/UX design, wireframing, and prototyping. Experienced in collaborating with teams to create user-centered designs for web and mobile applications."
+    },
+    {
+        id: 20,
+        title: "Git",
+        img: git_logo,
+        category: "tools",
+        description: "Proficient in using Git for version control and managing code repositories. Experienced in collaborating on software projects using Git workflows."
+    },
+    {
+        id: 21,
+        title: "GitHub",
+        img: github_logo,
+        category: "tools",
+        description: "Experienced in using GitHub for hosting repositories, version control, and collaboration. Proficient in using GitHub features like pull requests, issue tracking, and project management."
+    },
+    {
+        id: 22,
+        title: "Docker",
+        img: docker_logo,
+        category: "tools",
+        description: "Proficient in using Docker for containerization and automating the deployment of applications. Experienced in building, shipping, and running applications inside containers."
+    },
+    {
+        id: 23,
+        title: "VS Code",
+        img: vscode_logo,
+        category: "tools",
+        description: "Experienced in using Visual Studio Code (VS Code) as an integrated development environment (IDE) for coding in various programming languages. Familiar with extensions and debugging tools."
     },
 ];
 

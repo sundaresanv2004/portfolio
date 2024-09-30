@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from 'react'
 import styles from "@/app/styles"
 import { Menu } from 'lucide-react';

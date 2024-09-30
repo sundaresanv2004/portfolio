@@ -1,5 +1,5 @@
 "use client";
-import { Loader2, Mail, MapPin } from "lucide-react"
+import { Loader2 } from "lucide-react"
 import styles from "@/app/styles";
 import { Input } from "@/components/ui/input"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -179,7 +179,7 @@ const Contact = () => {
                                                         <SelectValue placeholder="Select what you're looking for" />
                                                     </SelectTrigger>
                                                 </FormControl>
-                                                <SelectContent>
+                                                <SelectContent className={"bg-white text-black border-transparent"}>
                                                     <SelectGroup>
                                                         <SelectLabel>Machine Learning</SelectLabel>
                                                         <SelectItem value="ML_Model">Machine Learning Model</SelectItem>

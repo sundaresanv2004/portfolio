@@ -22,6 +22,11 @@ import tailwind_logo from "./tailwind_logo.png";
 import scikit_logo from "./scikit_logo.png";
 import mongodb_logo from "./mongodb_logo.png";
 import blender_logo from "./blender_logo.png";
+import git_logo from './Git.png';
+import docker_logo from "./docker-mark-blue.png";
+import figma_logo from "./figma_logo.png";
+import vscode_logo from './Visual_Studio_Code.png'
+import github_logo from './github-mark.png'
 
 import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
@@ -55,6 +60,11 @@ export {
     scikit_logo,
     mongodb_logo,
     blender_logo,
+    git_logo,
+    docker_logo,
+    vscode_logo,
+    figma_logo,
+    github_logo,
 
     instagram,
     linkedin,
